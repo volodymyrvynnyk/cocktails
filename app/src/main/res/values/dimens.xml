@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tv_history_text_size">20sp</dimen>
+    <dimen name="tv_header">20sp</dimen>
+    <dimen name="tv_header_margin_left">70dp</dimen>
+</resources>
