@@ -2,10 +2,11 @@ package com.example.cocktails.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Cocktail {
+public class Cocktail implements Serializable {
 
     @SerializedName("idDrink")
     private int idDrink;
