@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         Class destinationActivity= SearchActivity.class;
 
-        Intent childActivityIntent = new Intent(context, destinationActivity);
-        startActivity(childActivityIntent);
+        Intent intent = new Intent(context, destinationActivity);
+        startActivity(intent);
     }
 }

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/silver"
+    tools:context=".CocktailViewActivity">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back"
+            android:onClick="previousActivity"/>>
+
+        <TextView
+            android:id="@+id/tv_cocktail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/tv_header_margin_left"
+            android:fontFamily="sans-serif-medium"
+            android:lineSpacingExtra="8sp"
+            android:text="Name"
+            android:textColor="#de000000"
+            android:textSize="@dimen/tv_header" />
+
+    </Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_info_image"
+            android:layout_width="156dp"
+            android:layout_height="156dp"
+            android:layout_margin="30dp"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Name"
+                    android:layout_marginLeft="30dp"/>
+                <TextView
+                    android:id="@+id/tv_info_name"
+                    android:layout_marginLeft="40dp"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Alcoholic"
+                    android:layout_marginLeft="30dp"/>
+                <TextView
+                    android:id="@+id/tv_info_alcoholic"
+                    android:layout_marginLeft="40dp"
+                    android:text=""/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Glass"
+                    android:layout_marginLeft="30dp"/>
+                <TextView
+                    android:id="@+id/tv_info_glass"
+                    android:layout_marginLeft="40dp"
+                    android:text=""/>
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingredients"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:background="@color/gray"/>
+        <ListView
+            android:id="@+id/lv_info_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Instruction"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:background="@color/gray"/>
+        <ScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/sv_info_instruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

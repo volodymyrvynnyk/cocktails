@@ -1,7 +1,7 @@
 package com.example.cocktails;
 
 import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.cocktails.model.Cocktail;
-import com.example.cocktails.util.DownloadImageTask;
 
 import java.util.List;
 
@@ -38,12 +38,21 @@ public class CocktailsAdapter extends RecyclerView.Adapter<CocktailsAdapter.Cock
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CocktailViewHolder holder, int position) {
-        holder.title.setText(cocktails.get(position).getStrDrink());
-        new DownloadImageTask(holder.image)
-                .execute(cocktails.get(position).getStrDrinkThumb());
-//        holder.image.setImageURI(Uri.parse(cocktails.get(position).getStrDrinkThumb()));
+    public void onBindViewHolder(@NonNull CocktailViewHolder holder, final int position) {
 
+        holder.title.setText(cocktails.get(position).getStrDrink());
+        Glide.with(holder.itemView)
+                .load(cocktails.get(position).getStrDrinkThumb())
+                .into(holder.image);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, CocktailViewActivity.class);
+                intent.putExtra(Intent.EXTRA_CHOSEN_COMPONENT, cocktails.get(position));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
