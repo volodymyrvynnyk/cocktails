@@ -2,6 +2,11 @@ package com.example.cocktails.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Cocktail {
 
     @SerializedName("idDrink")
@@ -56,8 +61,8 @@ public class Cocktail {
     private String strIngredient12;
 
     @SerializedName("strIngredient13")
-
     private String strIngredient13;
+
     @SerializedName("strIngredient14")
     private String strIngredient14;
 
@@ -108,6 +113,27 @@ public class Cocktail {
 
     @SerializedName("strMeasure15")
     private String strMeasure15;
+
+    public Map<String, String> getIngredients() {
+        Map<String, String> ingredients = new HashMap<>();
+        ingredients.put(strIngredient1, strMeasure1);
+        ingredients.put(strIngredient2, strMeasure2);
+        ingredients.put(strIngredient3, strMeasure3);
+        ingredients.put(strIngredient4, strMeasure4);
+        ingredients.put(strIngredient5, strMeasure5);
+        ingredients.put(strIngredient6, strMeasure6);
+        ingredients.put(strIngredient7, strMeasure7);
+        ingredients.put(strIngredient8, strMeasure8);
+        ingredients.put(strIngredient9, strMeasure9);
+        ingredients.put(strIngredient10, strMeasure10);
+        ingredients.put(strIngredient11, strMeasure11);
+        ingredients.put(strIngredient12, strMeasure12);
+        ingredients.put(strIngredient13, strMeasure13);
+        ingredients.put(strIngredient14, strMeasure14);
+        ingredients.put(strIngredient15, strMeasure15);
+        if (ingredients.containsKey(null)) ingredients.remove(null);
+        return ingredients;
+    }
 
 
     public int getIdDrink() {

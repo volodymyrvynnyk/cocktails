@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/silver"
+    android:orientation="vertical"
     tools:context=".SearchActivity">
 
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="do"
-        android:onClick="find"/>
+        <EditText
+            android:id="@+id/ed_search"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+
+            android:drawableLeft="@drawable/search_black" />
+    </Toolbar>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_search_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:lineSpacingExtra="10sp"
+            android:text="Enter text to start search"
+            android:textAlignment="center"
+            android:textColor="#727272"
+            android:textSize="@dimen/tv_history_text_size"
+            android:textStyle="normal"
+            android:visibility="visible" />
+    </FrameLayout>
 </LinearLayout>
