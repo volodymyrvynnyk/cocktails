@@ -9,7 +9,7 @@
 
     <Toolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="@color/white">
 
         <TextView
@@ -41,7 +41,7 @@
             android:textColor="#727272"
             android:textSize="@dimen/tv_history_text_size"
             android:textStyle="normal"
-            android:visibility="visible" />
+            android:visibility="invisible" />
 
 
         <ImageButton
@@ -51,9 +51,9 @@
             android:layout_gravity="bottom|right"
             android:layout_margin="50dp"
             android:background="@drawable/button_states"
-            android:drawableTop="@drawable/search"
+            android:drawableTop="@drawable/search_white"
             android:onClick="onClickSearch"
-            android:src="@drawable/search" />
+            android:src="@drawable/search_white" />
     </FrameLayout>
 
 
