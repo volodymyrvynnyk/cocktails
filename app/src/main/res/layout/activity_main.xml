@@ -41,7 +41,7 @@
             android:textColor="#727272"
             android:textSize="@dimen/tv_history_text_size"
             android:textStyle="normal"
-            android:visibility="visible" />
+            android:visibility="invisible" />
 
 
         <ImageButton

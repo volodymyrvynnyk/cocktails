@@ -2,9 +2,7 @@ package com.example.cocktails.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Cocktail {
@@ -23,6 +21,9 @@ public class Cocktail {
 
     @SerializedName("strInstructions")
     private String strInstructions;
+
+    @SerializedName("strDrinkThumb")
+    private String strDrinkThumb;
 
     @SerializedName("strIngredient1")
     private String strIngredient1;
@@ -174,6 +175,14 @@ public class Cocktail {
 
     public void setStrInstructions(String strInstructions) {
         this.strInstructions = strInstructions;
+    }
+
+    public String getStrDrinkThumb() {
+        return strDrinkThumb;
+    }
+
+    public void setStrDrinkThumb(String strDrinkThumb) {
+        this.strDrinkThumb = strDrinkThumb;
     }
 
     public String getStrIngredient1() {
