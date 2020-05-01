@@ -48,7 +48,7 @@ public class CocktailsAdapter extends RecyclerView.Adapter<CocktailsAdapter.Cock
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, CocktailViewActivity.class);
-                intent.putExtra(Intent.EXTRA_CHOSEN_COMPONENT, cocktails.get(position));
+                intent.putExtra("cocktail_id", cocktails.get(position).getIdDrink());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }

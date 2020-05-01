@@ -9,7 +9,7 @@ import java.util.Map;
 public class Cocktail implements Serializable {
 
     @SerializedName("idDrink")
-    private int idDrink;
+    private long idDrink;
 
     @SerializedName("strDrink")
     private String strDrink;
@@ -138,11 +138,11 @@ public class Cocktail implements Serializable {
     }
 
 
-    public int getIdDrink() {
+    public long getIdDrink() {
         return idDrink;
     }
 
-    public void setIdDrink(int idDrink) {
+    public void setIdDrink(long idDrink) {
         this.idDrink = idDrink;
     }
 

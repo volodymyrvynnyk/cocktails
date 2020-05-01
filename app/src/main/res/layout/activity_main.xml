@@ -29,6 +29,28 @@
         android:layout_height="match_parent"
         android:layout_gravity="center">
 
+        <LinearLayout
+            android:id="@+id/history_layout"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:textAlignment="center"
+                android:textSize="22sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_cocktails_history"
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:scrollbars="vertical"
+                android:visibility="visible" />
+        </LinearLayout>
+
         <TextView
             android:id="@+id/tv_history"
             android:layout_width="match_parent"
@@ -54,6 +76,17 @@
             android:drawableTop="@drawable/search_white"
             android:onClick="onClickSearch"
             android:src="@drawable/search_white" />
+
+        <Button
+            android:id="@+id/b_remove_history"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom|left"
+            android:layout_margin="50dp"
+            android:background="@drawable/button_states"
+            android:onClick="clearHistory"
+            android:text="Remove history"
+            android:visibility="invisible" />
     </FrameLayout>
 
 
