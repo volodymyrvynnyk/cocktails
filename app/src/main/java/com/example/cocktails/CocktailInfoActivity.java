@@ -20,14 +20,13 @@ import com.example.cocktails.service.NetworkService;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CocktailViewActivity extends AppCompatActivity {
+public class CocktailInfoActivity extends AppCompatActivity {
 
     private Cocktail cocktail;
 
@@ -48,16 +47,16 @@ public class CocktailViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cocktail_view);
+        setContentView(R.layout.activity_cocktail_info);
 
 
-        nameToolbar = findViewById(R.id.tv_cocktail_name);
-        name = findViewById(R.id.tv_info_name);
-        alcoholic = findViewById(R.id.tv_info_alcoholic);
-        glass = findViewById(R.id.tv_info_glass);
-        image = findViewById(R.id.iv_info_image);
-        ingredients = findViewById(R.id.lv_info_ingredients);
-        instruction = findViewById(R.id.sv_info_instruction);
+        nameToolbar = findViewById(R.id.tv_cocktail_info_title);
+        name = findViewById(R.id.tv_cocktail_info_name);
+        alcoholic = findViewById(R.id.tv_cocktail_info_alcoholic);
+        glass = findViewById(R.id.tv_cocktail_info_glass);
+        image = findViewById(R.id.iv_cocktail_info_image);
+        ingredients = findViewById(R.id.lv_cocktail_info_ingredients_list);
+        instruction = findViewById(R.id.tv_cocktail_info_instruction);
 
         Intent intentThatStartedThisOne = getIntent();
 
@@ -96,7 +95,7 @@ public class CocktailViewActivity extends AppCompatActivity {
         dbHelper.close();
     }
 
-    public void previousActivity(View view) {
+    public void onClickBack(View view) {
         finish();
     }
 

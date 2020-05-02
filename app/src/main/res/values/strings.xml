@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Cocktails</string>
     <string name="empty_history">History is empty</string>
+    <string name="main_activity_top_bar_text">Cocktails</string>
+    <string name="clear_history_text"> Clear history </string>
+    <string name="search_tip">Enter text to start search</string>
+    <string name="history_title">Recent activity</string>
 </resources>

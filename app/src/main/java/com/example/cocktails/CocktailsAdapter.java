@@ -33,7 +33,7 @@ public class CocktailsAdapter extends RecyclerView.Adapter<CocktailsAdapter.Cock
     @NonNull
     @Override
     public CocktailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.rv_cocktails_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.cocktails_list_item, parent, false);
         return new CocktailViewHolder(view);
     }
 
@@ -47,7 +47,7 @@ public class CocktailsAdapter extends RecyclerView.Adapter<CocktailsAdapter.Cock
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, CocktailViewActivity.class);
+                Intent intent = new Intent(context, CocktailInfoActivity.class);
                 intent.putExtra("cocktail_id", cocktails.get(position).getIdDrink());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);

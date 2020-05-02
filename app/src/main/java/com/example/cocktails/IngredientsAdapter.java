@@ -41,7 +41,7 @@ public class IngredientsAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view = inflter.inflate(R.layout.lv_ingredient_item, null);
+        view = inflter.inflate(R.layout.cocktail_info_ingredient_item, null);
         TextView ingredient = view.findViewById(R.id.tv_ingredient_name);
         TextView measure = view.findViewById(R.id.tv_ingredient_measure);
         String key = keys.get(i);

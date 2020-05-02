@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        emptyHistoryText = findViewById(R.id.tv_history);
-        removeHistoryBtn = findViewById(R.id.b_remove_history);
-        historyLayout = findViewById(R.id.history_layout);
+        emptyHistoryText = findViewById(R.id.tv_empty_history);
+        removeHistoryBtn = findViewById(R.id.b_clear_history);
+        historyLayout = findViewById(R.id.ll_history);
 
         getHistory();
         if (historyList.isEmpty()) {
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         emptyHistoryText.setVisibility(View.INVISIBLE);
         removeHistoryBtn.setVisibility(View.VISIBLE);
 
-        historyView = findViewById(R.id.rv_cocktails_history);
+        historyView = findViewById(R.id.rv_cocktails_history_list);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, ITEMS_IN_LINE);
         historyView.setLayoutManager(gridLayoutManager);
         cocktailsAdapter = new CocktailsAdapter(getApplicationContext(), historyList);
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         dbHelper.close();
     }
 
-    public void onClickSearch(View view) {
+    public void onClickStartSearchActivity(View view) {
         Context context = MainActivity.this;
 
         Class destinationActivity = SearchActivity.class;
