@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="horizontal">
+
     <TextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/tv_ingredient_name"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:text="Name"
-        android:layout_marginLeft="30dp">
-    </TextView>
+        android:textSize="@dimen/cocktail_info_text_size" />
+
     <TextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/tv_ingredient_measure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:text="Measure"
-        android:layout_marginLeft="40dp"
- >
-    </TextView>
+        android:textSize="@dimen/cocktail_info_text_size" />
 </LinearLayout>

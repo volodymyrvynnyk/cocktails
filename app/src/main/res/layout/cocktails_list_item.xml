@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="156dp"
+        android:layout_height="156dp"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:id="@+id/item_cocktail_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/item_cocktail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:layout_gravity="bottom|center_horizontal"
+            android:text="name"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/cocktail_info_text_size"
+            android:textStyle="bold"
+            android:background="@color/white"/>
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>

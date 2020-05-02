@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="tv_history_text_size">20sp</dimen>
-    <dimen name="tv_header">20sp</dimen>
-    <dimen name="tv_header_margin_left">70dp</dimen>
+    <dimen name="top_bar_text_margin_left">70dp</dimen>
+    <dimen name="top_bar_height">70dp</dimen>
+    <dimen name="top_bar_text_size">30sp</dimen>
+    <dimen name="default_text_size">22sp</dimen>
+    <dimen name="cocktail_info_text_size">18sp</dimen>
 </resources>

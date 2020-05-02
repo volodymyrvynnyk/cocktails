@@ -28,11 +28,12 @@ public class SearchActivity extends AppCompatActivity {
 
     private TextView searchStatus;
 
-    private RecyclerView cocktailsView;
+    private RecyclerView cocktailsFoundView;
     private CocktailsAdapter cocktailsAdapter;
 
     private static String ERROR_MESSAGE = "Network error, try again";
     private static String EMPTY_RESULT_MESSAGE = "No cocktails found";
+
     private static int ITEMS_IN_LINE = 2;
 
 
@@ -43,13 +44,13 @@ public class SearchActivity extends AppCompatActivity {
 
         searchField = findViewById(R.id.ed_search);
         searchStatus = findViewById(R.id.tv_search_status);
-        cocktailsView = findViewById(R.id.rv_cocktails_view);
+        cocktailsFoundView = findViewById(R.id.rv_cocktails_found_list);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, ITEMS_IN_LINE);
-        cocktailsView.setLayoutManager(gridLayoutManager);
+        cocktailsFoundView.setLayoutManager(gridLayoutManager);
 
         cocktailsAdapter = new CocktailsAdapter(getApplicationContext(), new ArrayList<Cocktail>());
-        cocktailsView.setAdapter(cocktailsAdapter);
+        cocktailsFoundView.setAdapter(cocktailsAdapter);
 
         searchField.setOnEditorActionListener(new EditText.OnEditorActionListener() {
             @Override
@@ -96,12 +97,12 @@ public class SearchActivity extends AppCompatActivity {
 
     private void hideRecyclerView(String message) {
         searchStatus.setVisibility(View.VISIBLE);
-        cocktailsView.setVisibility(View.INVISIBLE);
+        cocktailsFoundView.setVisibility(View.INVISIBLE);
         searchStatus.setText(message);
     }
 
     private void showRecyclerView() {
-        cocktailsView.setVisibility(View.VISIBLE);
+        cocktailsFoundView.setVisibility(View.VISIBLE);
         searchStatus.setVisibility(View.INVISIBLE);
     }
 }
