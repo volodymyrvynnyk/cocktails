@@ -47,7 +47,7 @@ public class IngredientsAdapter extends BaseAdapter {
         TextView ingredient = view.findViewById(R.id.tv_ingredient_name);
         TextView measure = view.findViewById(R.id.tv_ingredient_measure);
         String key = keys.get(i);
-        ingredient.setText(i+1 + ". " + key);
+        ingredient.setText(i + 1 + ". " + key);
         measure.setText(ingredients.get(key));
         return view;
     }
