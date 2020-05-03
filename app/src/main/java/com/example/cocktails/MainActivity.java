@@ -47,19 +47,11 @@ public class MainActivity extends AppCompatActivity {
         removeHistoryBtn = findViewById(R.id.b_clear_history);
         historyLayout = findViewById(R.id.ll_history);
 
-        getHistory();
-        if (historyList.isEmpty()) {
-            hideHistory();
-        } else {
-            showHistory();
-        }
-
-
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
         getHistory();
         if (historyList.isEmpty()) {
             hideHistory();
