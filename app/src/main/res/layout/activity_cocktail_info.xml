@@ -119,17 +119,14 @@
             android:textSize="@dimen/cocktail_info_text_size"
             android:textStyle="bold" />
 
-        <ScrollView
+
+        <ListView
+            android:layout_marginVertical="10dp"
+            android:background="@color/white"
+            android:id="@+id/lv_cocktail_info_ingredients_list"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@color/white">
-
-            <ListView
-                android:id="@+id/lv_cocktail_info_ingredients_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp" />
-        </ScrollView>
+            android:layout_marginHorizontal="30dp" />
 
         <TextView
             android:layout_width="match_parent"

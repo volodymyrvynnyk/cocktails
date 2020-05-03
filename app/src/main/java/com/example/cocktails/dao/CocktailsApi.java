@@ -1,4 +1,4 @@
-package com.example.cocktails.service;
+package com.example.cocktails.dao;
 
 import com.example.cocktails.model.Drinks;
 

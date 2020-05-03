@@ -1,4 +1,4 @@
-package com.example.cocktails;
+package com.example.cocktails.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.cocktails.CocktailInfoActivity;
+import com.example.cocktails.R;
 import com.example.cocktails.model.Cocktail;
 
 import java.util.List;
@@ -20,6 +22,8 @@ public class CocktailsAdapter extends RecyclerView.Adapter<CocktailsAdapter.Cock
 
     private Context context;
     private List<Cocktail> cocktails;
+
+    private static String COCKTAIL_ID_INTENT_EXTRA_NAME = "cocktail_id";
 
     public CocktailsAdapter(Context context, List<Cocktail> cocktails) {
         this.context = context;
@@ -48,7 +52,7 @@ public class CocktailsAdapter extends RecyclerView.Adapter<CocktailsAdapter.Cock
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, CocktailInfoActivity.class);
-                intent.putExtra("cocktail_id", cocktails.get(position).getIdDrink());
+                intent.putExtra(COCKTAIL_ID_INTENT_EXTRA_NAME, cocktails.get(position).getIdDrink());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }

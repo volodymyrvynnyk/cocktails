@@ -13,10 +13,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.example.cocktails.adapter.IngredientsAdapter;
 import com.example.cocktails.model.Cocktail;
 import com.example.cocktails.model.Drinks;
-import com.example.cocktails.service.DBHelper;
-import com.example.cocktails.service.NetworkService;
+import com.example.cocktails.dao.CocktailsDbHelper;
+import com.example.cocktails.dao.NetworkService;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -34,7 +35,7 @@ public class CocktailInfoActivity extends AppCompatActivity {
 
     private static String COCKTAIL_ID_INTENT_EXTRA_NAME = "cocktail_id";
 
-    private DBHelper dbHelper;
+    private CocktailsDbHelper cocktailsDbHelper;
 
     private TextView nameToolbar;
     private TextView name;
@@ -81,18 +82,18 @@ public class CocktailInfoActivity extends AppCompatActivity {
     }
 
     private void saveToHistory() {
-        dbHelper = new DBHelper(this);
-        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
-        sqLiteDatabase.delete(DBHelper.TABLE_HISTORY,
-                DBHelper.KEY_COCKTAIL_ID + " =?",
+        cocktailsDbHelper = new CocktailsDbHelper(this);
+        SQLiteDatabase sqLiteDatabase = cocktailsDbHelper.getWritableDatabase();
+        sqLiteDatabase.delete(CocktailsDbHelper.TABLE_HISTORY,
+                CocktailsDbHelper.KEY_COCKTAIL_ID + " =?",
                 new String[]{String.valueOf(cocktail.getIdDrink())});
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DBHelper.KEY_COCKTAIL_ID, cocktail.getIdDrink());
-        contentValues.put(DBHelper.KEY_NAME, cocktail.getStrDrink());
-        contentValues.put(DBHelper.KEY_IMAGE_URL, cocktail.getStrDrinkThumb());
-        contentValues.put(DBHelper.KEY_VIEW_DATE, dateFormat.format(new Date()));
-        sqLiteDatabase.insert(DBHelper.TABLE_HISTORY, null, contentValues);
-        dbHelper.close();
+        contentValues.put(CocktailsDbHelper.KEY_COCKTAIL_ID, cocktail.getIdDrink());
+        contentValues.put(CocktailsDbHelper.KEY_NAME, cocktail.getStrDrink());
+        contentValues.put(CocktailsDbHelper.KEY_IMAGE_URL, cocktail.getStrDrinkThumb());
+        contentValues.put(CocktailsDbHelper.KEY_VIEW_DATE, dateFormat.format(new Date()));
+        sqLiteDatabase.insert(CocktailsDbHelper.TABLE_HISTORY, null, contentValues);
+        cocktailsDbHelper.close();
     }
 
     public void onClickBack(View view) {

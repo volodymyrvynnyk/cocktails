@@ -1,4 +1,4 @@
-package com.example.cocktails.service;
+package com.example.cocktails.dao;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

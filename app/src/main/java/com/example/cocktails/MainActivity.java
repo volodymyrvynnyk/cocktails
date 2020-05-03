@@ -10,13 +10,13 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cocktails.adapter.CocktailsAdapter;
+import com.example.cocktails.dao.CocktailsDbHelper;
 import com.example.cocktails.model.Cocktail;
-import com.example.cocktails.service.DBHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,13 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView emptyHistoryText;
 
-    private DBHelper dbHelper;
+    private CocktailsDbHelper cocktailsDbHelper;
 
     private List<Cocktail> historyList;
 
-    private RecyclerView historyView;
-
-    private CocktailsAdapter cocktailsAdapter;
+    private RecyclerView historyViewList;
 
     private LinearLayout historyLayout;
 
@@ -81,30 +79,30 @@ public class MainActivity extends AppCompatActivity {
         emptyHistoryText.setVisibility(View.INVISIBLE);
         removeHistoryBtn.setVisibility(View.VISIBLE);
 
-        historyView = findViewById(R.id.rv_cocktails_history_list);
+        historyViewList = findViewById(R.id.rv_cocktails_history_list);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, ITEMS_IN_LINE);
-        historyView.setLayoutManager(gridLayoutManager);
-        cocktailsAdapter = new CocktailsAdapter(getApplicationContext(), historyList);
-        historyView.setAdapter(cocktailsAdapter);
+        historyViewList.setLayoutManager(gridLayoutManager);
+        CocktailsAdapter cocktailsAdapter = new CocktailsAdapter(getApplicationContext(), historyList);
+        historyViewList.setAdapter(cocktailsAdapter);
     }
 
     private void getHistory() {
-        dbHelper = new DBHelper(this);
-        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        cocktailsDbHelper = new CocktailsDbHelper(this);
+        SQLiteDatabase sqLiteDatabase = cocktailsDbHelper.getReadableDatabase();
 
-        Cursor cursor = sqLiteDatabase.query(DBHelper.TABLE_HISTORY,
+        Cursor cursor = sqLiteDatabase.query(CocktailsDbHelper.TABLE_HISTORY,
                 null, null, null,
-                null, null, DBHelper.KEY_VIEW_DATE + " DESC");
+                null, null, CocktailsDbHelper.KEY_VIEW_DATE + " DESC");
         historyList = new ArrayList<>();
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
             Cocktail cocktail = new Cocktail();
-            cocktail.setIdDrink(cursor.getLong(cursor.getColumnIndex(DBHelper.KEY_COCKTAIL_ID)));
-            cocktail.setStrDrink(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_NAME)));
-            cocktail.setStrDrinkThumb(cursor.getString(cursor.getColumnIndex(DBHelper.KEY_IMAGE_URL)));
+            cocktail.setIdDrink(cursor.getLong(cursor.getColumnIndex(CocktailsDbHelper.KEY_COCKTAIL_ID)));
+            cocktail.setStrDrink(cursor.getString(cursor.getColumnIndex(CocktailsDbHelper.KEY_NAME)));
+            cocktail.setStrDrinkThumb(cursor.getString(cursor.getColumnIndex(CocktailsDbHelper.KEY_IMAGE_URL)));
             historyList.add(cocktail);
         }
-        dbHelper.close();
+        cocktailsDbHelper.close();
     }
 
     public void onClickStartSearchActivity(View view) {
@@ -117,9 +115,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clearHistory(View view) {
-        dbHelper = new DBHelper(this);
-        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
-        sqLiteDatabase.execSQL("delete from "+ DBHelper.TABLE_HISTORY);
+        cocktailsDbHelper = new CocktailsDbHelper(this);
+        SQLiteDatabase sqLiteDatabase = cocktailsDbHelper.getWritableDatabase();
+        sqLiteDatabase.execSQL("delete from " + CocktailsDbHelper.TABLE_HISTORY);
         hideHistory();
     }
 
