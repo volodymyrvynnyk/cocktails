@@ -12,7 +12,4 @@ public class Drinks {
         return cocktailList;
     }
 
-    public void setCocktailList(List<Cocktail> cocktailList) {
-        this.cocktailList = cocktailList;
-    }
 }

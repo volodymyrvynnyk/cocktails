@@ -12,9 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cocktails.adapter.CocktailsAdapter;
+import com.example.cocktails.dao.NetworkService;
 import com.example.cocktails.model.Cocktail;
 import com.example.cocktails.model.Drinks;
-import com.example.cocktails.service.NetworkService;
 
 import java.util.ArrayList;
 
