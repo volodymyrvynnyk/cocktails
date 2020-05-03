@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/application_background"
+    android:background="@drawable/bg_app"
     android:orientation="vertical"
     tools:context=".CocktailInfoActivity">
 
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="@dimen/top_bar_height"
-        android:background="@drawable/top_bar_background">
+        android:background="@drawable/bg_top_bar">
 
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_round_white"
+            android:background="@drawable/bg_button_round"
             android:onClick="onClickBack"
-            android:src="@drawable/arrow_back" />>
+            android:src="@drawable/ic_arrow_back" />>
 
         <TextView
             android:id="@+id/tv_cocktail_info_title"
@@ -27,7 +27,7 @@
             android:layout_marginStart="@dimen/top_bar_text_margin_left"
             android:fontFamily="sans-serif-medium"
             android:text="Cocktail"
-            android:textColor="@color/white"
+            android:textColor="@color/general_text"
             android:textSize="@dimen/top_bar_text_size" />
 
     </Toolbar>
@@ -61,14 +61,14 @@
                 <TextView
                     android:layout_width="100dp"
                     android:text="Name:"
-                    android:textColor="@color/white"
+                    android:textColor="@color/general_text"
                     android:textSize="@dimen/cocktail_info_text_size"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_cocktail_info_name"
                     android:layout_marginStart="40dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/general_text"
                     android:textSize="@dimen/cocktail_info_text_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -78,14 +78,14 @@
                 <TextView
                     android:layout_width="100dp"
                     android:text="Alcoholic:"
-                    android:textColor="@color/white"
+                    android:textColor="@color/general_text"
                     android:textSize="@dimen/cocktail_info_text_size"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_cocktail_info_alcoholic"
                     android:layout_marginStart="40dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/general_text"
                     android:textSize="@dimen/cocktail_info_text_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -95,14 +95,14 @@
                 <TextView
                     android:layout_width="100dp"
                     android:text="Glass:"
-                    android:textColor="@color/white"
+                    android:textColor="@color/general_text"
                     android:textSize="@dimen/cocktail_info_text_size"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_cocktail_info_glass"
                     android:layout_marginStart="40dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/general_text"
                     android:textSize="@dimen/cocktail_info_text_size"
                     android:textStyle="bold" />
             </TableRow>
@@ -112,17 +112,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:background="@color/gray"
+            android:background="@color/secondary_background"
             android:text="Ingredients"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/general_text"
             android:textSize="@dimen/cocktail_info_text_size"
             android:textStyle="bold" />
 
 
         <ListView
             android:layout_marginVertical="10dp"
-            android:background="@color/white"
+            android:background="@color/general_text"
             android:id="@+id/lv_cocktail_info_ingredients_list"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -131,10 +131,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/gray"
+            android:background="@color/secondary_background"
             android:text="Instruction"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/general_text"
             android:textSize="@dimen/cocktail_info_text_size"
             android:textStyle="bold" />
 
@@ -142,7 +142,7 @@
             android:layout_width="match_parent"
 
             android:layout_height="match_parent"
-            android:background="@color/white">
+            android:background="@color/general_text">
 
             <TextView
                 android:id="@+id/tv_cocktail_info_instruction"
