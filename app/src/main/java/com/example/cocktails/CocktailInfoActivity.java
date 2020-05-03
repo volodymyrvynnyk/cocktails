@@ -14,10 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.cocktails.adapter.IngredientsAdapter;
-import com.example.cocktails.model.Cocktail;
-import com.example.cocktails.model.Drinks;
 import com.example.cocktails.dao.CocktailsDbHelper;
 import com.example.cocktails.dao.NetworkService;
+import com.example.cocktails.model.Cocktail;
+import com.example.cocktails.model.Drinks;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -64,7 +64,6 @@ public class CocktailInfoActivity extends AppCompatActivity {
         if (intentThatStartedThisOne.hasExtra(COCKTAIL_ID_INTENT_EXTRA_NAME)) {
             findCocktailById(intentThatStartedThisOne.getLongExtra(COCKTAIL_ID_INTENT_EXTRA_NAME, -1l));
         }
-
 
 
     }
