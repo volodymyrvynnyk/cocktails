@@ -11,5 +11,25 @@
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/bg_splash</item>
     </style>
+    <style name="cocktail_info_paragraph_title">
+        <item name="android:textSize">@dimen/cocktail_info_text_size</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@color/secondary_background</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="cocktail_info_main_param_name">
+        <item name="android:width">100dp</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="cocktail_info_main_param_value">
+        <item name="android:layout_marginStart">40dp</item>
+        <item name="android:textColor">@color/general_text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

@@ -5,4 +5,6 @@
     <string name="clear_history_text"> Clear history </string>
     <string name="search_tip">Enter text to start search</string>
     <string name="history_title">Recent activity</string>
+    <string name="cocktail_info_ingredients_title">Ingredients</string>
+    <string name="cocktail_info_instruction_title">Instruction</string>
 </resources>

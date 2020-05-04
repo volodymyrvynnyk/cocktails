@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button_round"
             android:onClick="onClickBack"
-            android:src="@drawable/ic_arrow_back" />>
+            android:src="@drawable/ic_arrow_back" />
 
         <TextView
             android:id="@+id/tv_cocktail_info_title"
@@ -59,84 +59,58 @@
             <TableRow>
 
                 <TextView
-                    android:layout_width="100dp"
-                    android:text="Name:"
-                    android:textColor="@color/general_text"
-                    android:textSize="@dimen/cocktail_info_text_size"
-                    android:textStyle="bold" />
+                    style="@style/cocktail_info_main_param_name"
+                    android:text="Name:" />
 
                 <TextView
                     android:id="@+id/tv_cocktail_info_name"
-                    android:layout_marginStart="40dp"
-                    android:textColor="@color/general_text"
-                    android:textSize="@dimen/cocktail_info_text_size"
-                    android:textStyle="bold" />
+                    style="@style/cocktail_info_main_param_value" />
             </TableRow>
 
             <TableRow>
 
                 <TextView
-                    android:layout_width="100dp"
-                    android:text="Alcoholic:"
-                    android:textColor="@color/general_text"
-                    android:textSize="@dimen/cocktail_info_text_size"
-                    android:textStyle="bold" />
+                    style="@style/cocktail_info_main_param_name"
+                    android:text="Alcoholic:" />
 
                 <TextView
                     android:id="@+id/tv_cocktail_info_alcoholic"
-                    android:layout_marginStart="40dp"
-                    android:textColor="@color/general_text"
-                    android:textSize="@dimen/cocktail_info_text_size"
-                    android:textStyle="bold" />
+                    style="@style/cocktail_info_main_param_value" />
             </TableRow>
 
             <TableRow>
 
                 <TextView
-                    android:layout_width="100dp"
-                    android:text="Glass:"
-                    android:textColor="@color/general_text"
-                    android:textSize="@dimen/cocktail_info_text_size"
-                    android:textStyle="bold" />
+                    style="@style/cocktail_info_main_param_name"
+                    android:text="Glass:" />
 
                 <TextView
                     android:id="@+id/tv_cocktail_info_glass"
-                    android:layout_marginStart="40dp"
-                    android:textColor="@color/general_text"
-                    android:textSize="@dimen/cocktail_info_text_size"
-                    android:textStyle="bold" />
+                    style="@style/cocktail_info_main_param_value" />
             </TableRow>
         </TableLayout>
 
         <TextView
+            style="@style/cocktail_info_paragraph_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:background="@color/secondary_background"
-            android:text="Ingredients"
-            android:textAlignment="center"
-            android:textColor="@color/general_text"
-            android:textSize="@dimen/cocktail_info_text_size"
-            android:textStyle="bold" />
+            android:text="@string/cocktail_info_ingredients_title" />
 
 
         <ListView
-            android:layout_marginVertical="10dp"
-            android:background="@color/general_text"
             android:id="@+id/lv_cocktail_info_ingredients_list"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginHorizontal="30dp" />
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/general_text" />
 
         <TextView
+            style="@style/cocktail_info_paragraph_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/secondary_background"
-            android:text="Instruction"
-            android:textAlignment="center"
-            android:textColor="@color/general_text"
-            android:textSize="@dimen/cocktail_info_text_size"
-            android:textStyle="bold" />
+            android:text="@string/cocktail_info_instruction_title" />
 
         <ScrollView
             android:layout_width="match_parent"
