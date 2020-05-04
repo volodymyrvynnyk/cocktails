@@ -2,6 +2,7 @@ package com.example.cocktails;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -34,8 +35,9 @@ public class SearchActivity extends AppCompatActivity {
     private RecyclerView cocktailsFoundView;
     private CocktailsAdapter cocktailsAdapter;
 
-    private static String ERROR_MESSAGE = "Network error, try again";
-    private static String EMPTY_RESULT_MESSAGE = "No cocktails found";
+    private static final  String ERROR_MESSAGE = "Network error, try again";
+    private static final String EMPTY_RESULT_MESSAGE = "No cocktails found";
+    private static final String TAG = "ApiLog";
 
     private static int ITEMS_IN_LINE = 2;
 
@@ -86,9 +88,11 @@ public class SearchActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(@NonNull Call<Drinks> call,
                                            @NonNull Response<Drinks> response) {
+                        Log.d(TAG, "Response success");
                         cocktailsAdapter.setCocktails(response.body().getCocktailList());
                         cocktailsAdapter.notifyDataSetChanged();
                         if (cocktailsAdapter.getItemCount() == 0) {
+                            Log.d(TAG, "Empty response");
                             hideRecyclerView(EMPTY_RESULT_MESSAGE);
                         } else {
                             showRecyclerView();
@@ -97,6 +101,7 @@ public class SearchActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(@NonNull Call<Drinks> call, @NonNull Throwable t) {
+                        Log.d(TAG, "Response failed:" + t.getMessage());
                         hideRecyclerView(ERROR_MESSAGE);
                         t.printStackTrace();
                     }

@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -33,7 +34,8 @@ public class CocktailInfoActivity extends AppCompatActivity {
 
     private static DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    private static String COCKTAIL_ID_INTENT_EXTRA_NAME = "cocktail_id";
+    private static final String COCKTAIL_ID_INTENT_EXTRA_NAME = "cocktail_id";
+    private static final String TAG = "DB";
 
     private CocktailsDbHelper cocktailsDbHelper;
 
@@ -92,6 +94,7 @@ public class CocktailInfoActivity extends AppCompatActivity {
         contentValues.put(CocktailsDbHelper.KEY_IMAGE_URL, cocktail.getStrDrinkThumb());
         contentValues.put(CocktailsDbHelper.KEY_VIEW_DATE, dateFormat.format(new Date()));
         sqLiteDatabase.insert(CocktailsDbHelper.TABLE_HISTORY, null, contentValues);
+        Log.d(TAG, "Item saved to history");
         cocktailsDbHelper.close();
     }
 
@@ -107,6 +110,7 @@ public class CocktailInfoActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(@NonNull Call<Drinks> call,
                                            @NonNull Response<Drinks> response) {
+                        Log.d(TAG, "Response success");
                         Drinks drinks = response.body();
                         cocktail = drinks.getCocktailList().get(0);
                         fillField();
@@ -116,6 +120,7 @@ public class CocktailInfoActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(@NonNull Call<Drinks> call, @NonNull Throwable t) {
+                        Log.d(TAG, "Response failed:" + t.getMessage());
                         t.printStackTrace();
                     }
                 });
